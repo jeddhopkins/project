@@ -28,13 +28,14 @@ public class Pokedex {
         pokemonCaught++;
     }
 
-    public TreeMap<String, Pokemon> convertListToSortedTreeMap() {
-        return new TreeMap<String, Pokemon>(pokemonList);
-    }
-
     public void printPokedex() {
         TreeMap<String, Pokemon> sortedList = convertListToSortedTreeMap();
         sortedList.forEach((key, value) -> System.out.println(key + ": " + value.getName()));
+    }
+
+    //Private methods
+    private TreeMap<String, Pokemon> convertListToSortedTreeMap() {
+        return new TreeMap<>(pokemonList);
     }
 
     private void createPokedexEntries() {
